@@ -1,0 +1,8 @@
+This is a new file
+
+#+begin_src emacs-lisp
+(print "new file!")
+#+end_src
+
+#+RESULTS:
+: new file!
