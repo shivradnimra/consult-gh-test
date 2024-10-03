@@ -1,0 +1,12 @@
+This is a new added file
+
+#+begin_src python
+print("Hello")
+#+end_src
+
+#+begin_src emacs-lisp
+(print "Hello")
+#+end_src
+
+#+RESULTS:
+: Hello
