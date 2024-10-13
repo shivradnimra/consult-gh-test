@@ -2,13 +2,6 @@
 
 ;; Copyright (C) 2023 Armin Darvish
 
-;; Author: Armin Darvish
-;; Maintainer: Armin Darvish
-;; Created: 2023
-;; Version: 2.0
-;; Homepage: https://github.com/armindarvish/consult-gh
-;; Keywords: matching, git, repositories, forges, completion
-
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is free software: you can redistribute it and/or modify
@@ -91,6 +84,10 @@ PROMPT, INITIAL-INPUT, and HISTORY are passed to `read-from-minibffer'."
   (read-from-minibuffer prompt initial-input read-expression-map t history))
 
 
+
+
+
+
 ;; Infixes
 (transient-define-infix consult-gh-transient--infix-repo-maxnum ()
   "Set `consult-gh-repo-maxnum' in `consult-gh' transient menu."
@@ -158,6 +155,10 @@ PROMPT, INITIAL-INPUT, and HISTORY are passed to `read-from-minibffer'."
   (consult-gh-auth-switch))
 
 
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+
 (transient-define-suffix consult-gh-transient--suffix-dashboard ()
   "Call `consult-gh-dashbaord' in `consult-gh' transient menu."
   :transient nil
@@ -222,13 +223,6 @@ PROMPT, INITIAL-INPUT, and HISTORY are passed to `read-from-minibffer'."
   (interactive)
   (consult-gh-issue-list))
 
-(transient-define-suffix consult-gh-transient--suffix-pr-list ()
-  "Call `consult-gh-pr-list' in `consult-gh' transient menu."
-  :transient nil
-  :description "List PRs of a Repo"
-  :key "p l"
-  (interactive)
-  (consult-gh-pr-list))
 
 (transient-define-suffix consult-gh-transient--suffix-search-repos ()
   "Call `consult-gh-search-repos' in `consult-gh' transient menu."
@@ -261,6 +255,10 @@ PROMPT, INITIAL-INPUT, and HISTORY are passed to `read-from-minibffer'."
   :key "s c"
   (interactive)
   (consult-gh-search-code))
+
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
 
 ;;; Provide `consul-gh-transient' module
 

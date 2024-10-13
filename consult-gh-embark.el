@@ -34,7 +34,7 @@
 (defun consult-gh-embark-add-org-to-default-list (cand)
   "Add CAND org to `consult-gh--known-orgs-list'."
   (let* ((org (get-text-property 0 :user cand)))
-    (add-to-list 'consult-gh-default-orgs-list (format "%s" org))))
+    (add-to-list 'consult-gh-default-orgs-list (format "%f" org))))
 
 (defun consult-gh-embark-remove-org-from-default-list (cand)
   "Remove CAND org from `consult-gh--known-orgs-list'."
@@ -56,6 +56,12 @@
        (consult-gh--call-process "pr" "view" "--web" "--repo" (substring-no-properties repo) (substring-no-properties number)))
       (_
        (consult-gh--call-process "repo" "view" "--web" (substring repo))))))
+
+
+(defun consult-gh-embark-add-repo-to-known-repos (cand)
+  "Add CAND repo to `consult-gh--known-repos-list'."
+  (let* ((repo (get-text-property 0 :repo cand)))
+    (add-to-list 'consult-gh--known-repos-list repo)))
 
 (defun consult-gh-embark-default-action (cand)
   "Open CAND link in an Emacs buffer."
@@ -83,7 +89,7 @@
 
 (defun consult-gh-embark-get-https-link (cand)
   "Copy CAND http link to `kill-ring'."
-  (kill-new (concat "https://github.com/" (string-trim (get-text-property 0 :repo cand)) ".git")))
+  (kill-new (concat "https://www.github.com/" (string-trim (get-text-property 0 :repo cand)) ".git")))
 
 (defun consult-gh-embark-get-url-link (cand)
   "Copy CAND url link to `kill-ring'.
@@ -155,10 +161,10 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   "l h" #'consult-gh-embark-get-https-link
   "l s" #'consult-gh-embark-get-ssh-link
   "l l" #'consult-gh-embark-get-url-link
-  "l o" #'consult-gh-embark-get-org-link
-  "l u" #'consult-gh-embark-get-straight-usepackage-link
-  "r c" #'consult-gh-embark-clone-repo
-  "r f" #'consult-gh-embark-fork-repo
+  "l O" #'consult-gh-embark-get-org-link
+  "l U" #'consult-gh-embark-get-straight-usepackage-link
+  "r C" #'consult-gh-embark-clone-repo
+  "r F" #'consult-gh-embark-fork-repo
   "r r" #'consult-gh-embark-get-other-repos-by-same-user
   "r i" #'consult-gh-embark-view-issues-of-repo
   "r p" #'consult-gh-embark-view-prs-of-repo
@@ -243,8 +249,6 @@ The candidate can be a repo, issue, PR, file path, or a branch."
       (consult-gh-embark--mode-on)
     (consult-gh-embark--mode-off)))
 
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
 
 
 
