@@ -237,23 +237,3 @@ The candidate can be a repo, issue, PR, file path, or a branch."
 (defun consult-gh-embark-unload-function ()
   "Unload function for `consult-gh-embark'."
   (consult-gh-embark--mode-off))
-
-;;;###autoload
-(define-minor-mode consult-gh-embark-mode
-  "Use embark with `consult-gh' for extra actions."
-  :init-value nil
-  :global t
-  :group 'consult-gh
-  :lighter " consult-gh-embark"
-  (if consult-gh-embark-mode
-      (consult-gh-embark--mode-on)
-    (consult-gh-embark--mode-off)))
-
-
-
-
-;;; Provide `consul-gh-embark' module
-
-(provide 'consult-gh-embark)
-
-;;; consult-gh-embark.el ends here
