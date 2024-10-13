@@ -1,30 +1,3 @@
-;;; consult-gh-embark.el --- Embark Actions for consult-gh -*- lexical-binding: t -*-
-
-;; Copyright (C) 2023 Armin Darvish
-
-;; Author: Armin Darvish
-;; Maintainer: Armin Darvish
-;; Created: 2023
-;; Version: 2.0
-;; Package-Requires: ((emacs "29.1") (consult-gh "2.0") (embark-consult "1.1"))
-;; Homepage: https://github.com/armindarvish/consult-gh
-;; Keywords: matching, git, repositories, forges, completion
-
-;; SPDX-License-Identifier: GPL-3.0-or-later
-
-;; This file is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published
-;; by the Free Software Foundation, either version 3 of the License,
-;; or (at your option) any later version.
-;;
-;; This file is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this file.  If not, see <https://www.gnu.org/licenses/>.
-
 
 ;;; Commentary:
 
@@ -165,17 +138,6 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   (let ((repo (or (get-text-property 0 :repo cand) (consult-gh--nonutf-cleanup cand))))
     (consult-gh-find-file repo)))
 
-(defun consult-gh-embark-clone-repo (cand)
-  "Clone the CAND repo at point."
-  (funcall #'consult-gh--repo-clone-action cand))
-
-(defun consult-gh-embark-fork-repo (cand)
-  "Fork the CAND repo at point."
-  (funcall #'consult-gh--repo-fork-action cand))
-
-(defun consult-gh-embark-save-file (cand)
-  "Save the CAND file at point."
-  (funcall #'consult-gh--files-save-file-action cand))
 
 
 ;;; Define Embark Keymaps
@@ -280,6 +242,10 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   (if consult-gh-embark-mode
       (consult-gh-embark--mode-on)
     (consult-gh-embark--mode-off)))
+
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
 
 
 ;;; Provide `consul-gh-embark' module
