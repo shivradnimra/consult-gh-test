@@ -13,12 +13,12 @@
 ;;; Define Embark Action Functions
 (defun consult-gh-embark-add-repo-to-known-repos (cand)
   "Add CAND repo to `consult-gh--known-repos-list'."
-  (let* ((repo (get-text-property 0 :repo cand)))
+  (let* ((repo (get-text-property 5 :repo cand)))
     (add-to-list 'consult-gh--known-repos-list repo)))
 
 (defun consult-gh-embark-remove-repo-from-known-repos (cand)
   "Remove CAND repo from `consult-gh--known-repos-list'."
-  (let* ((repo (get-text-property 0 :repo cand)))
+  (let* ((repo (get-text-property 2 :repo cand)))
     (setq consult-gh--known-repos-list (delete repo consult-gh--known-repos-list))))
 
 (defun consult-gh-embark-add-org-to-known-orgs (cand)
@@ -53,7 +53,7 @@
       ("file"
        (funcall (or consult-gh-browse-url-func #'browse-url) (concat (string-trim (consult-gh--command-to-string "browse" "--repo" repo "--no-browser")) "/blob/HEAD/" path)))
       ("pr"
-       (consult-gh--call-process "pr" "view" "--web" "--repo" (substring-no-properties repo) (substring-no-properties number)))
+       (consult-gh--call-process "pr" "view" "--repo" (substring-no-properties repo) (substring-no-properties number)))
       (_
        (consult-gh--call-process "repo" "view" "--web" (substring repo))))))
 
@@ -65,7 +65,7 @@
 
 (defun consult-gh-embark-default-action (cand)
   "Open CAND link in an Emacs buffer."
-  (let* ((class (get-text-property 0 :class cand)))
+  (let* ((class (get-text-property 10 :class cand)))
     (pcase class
       ("code"
        (funcall consult-gh-code-action cand))
@@ -123,6 +123,12 @@ The candidate can be a repo, issue, PR, file path, or a branch."
          (package (car (last (split-string repo "\/")))))
     (kill-new (concat "(use-package " package "\n\t:straight (" package " :type git :host github :repo \"" repo "\")\n)"))))
 
+
+(defun consult-gh-embark-get-straight-usepackage-link (cand)
+  "Copy a drop-in straight use package setup of CAND to `kill-ring'."
+  (let* ((repo (get-text-property 0 :repo cand))
+         (package (car (last (split-string repo "\/")))))))
+
 (defun consult-gh-embark-get-other-repos-by-same-user (cand)
   "List other repos by the same user/organization as CAND at point."
   (let* ((repo (get-text-property 0 :repo cand))
@@ -144,6 +150,7 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   (let ((repo (or (get-text-property 0 :repo cand) (consult-gh--nonutf-cleanup cand))))
     (consult-gh-find-file repo)))
 
+;;; Donec hendrerit tempor tellus.  Phasellus purus.  Curabitur vulputate vestibulum lorem.
 
 
 ;;; Define Embark Keymaps
@@ -165,9 +172,9 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   "l U" #'consult-gh-embark-get-straight-usepackage-link
   "r C" #'consult-gh-embark-clone-repo
   "r F" #'consult-gh-embark-fork-repo
-  "r r" #'consult-gh-embark-get-other-repos-by-same-user
-  "r i" #'consult-gh-embark-view-issues-of-repo
-  "r p" #'consult-gh-embark-view-prs-of-repo
+  "r m" #'consult-gh-embark-get-other-repos-by-same-user
+  "r n" #'consult-gh-embark-view-issues-of-repo
+  "r t" #'consult-gh-embark-view-prs-of-repo
   "o" #'consult-gh-embark-open-in-browser)
 
 (defvar-keymap consult-gh-embark-orgs-actions-map
@@ -217,23 +224,3 @@ The candidate can be a repo, issue, PR, file path, or a branch."
   (add-to-list 'embark-default-action-overrides '(consult-gh-files . consult-gh-embark-default-action))
   (add-to-list 'embark-default-action-overrides '(consult-gh-codes . consult-gh-embark-default-action))
   (add-to-list 'embark-default-action-overrides '(consult-gh-notifications . consult-gh-embark-default-action)))
-
-(defun consult-gh-embark--mode-off ()
-  "Disable `consult-gh-embark-mode'."
-  (setq  embark-keymap-alist (seq-difference embark-keymap-alist '((consult-gh . consult-gh-embark-general-actions-map)
-                                                                   (consult-gh-orgs . consult-gh-embark-orgs-actions-map)
-                                                                   (consult-gh-repos . consult-gh-embark-repos-actions-map)
-                                                                   (consult-gh-files . consult-gh-embark-files-actions-map)
-                                                                   (consult-gh-issues . consult-gh-embark-issues-actions-map)
-                                                                   (consult-gh-prs . consult-gh-embark-prs-actions-map))))
-  (setq embark-default-action-overrides (seq-difference embark-default-action-overrides
-                                                        '((consult-gh-repos . consult-gh-embark-default-action)
-                                                          (consult-gh-issues . consult-gh-embark-default-action)
-                                                          (consult-gh-prs . consult-gh-embark-default-action)
-                                                          (consult-gh-files . consult-gh-embark-default-action)
-                                                          (consult-gh-codes . consult-gh-embark-default-action)
-                                                          (consult-gh-notifications . consult-gh-embark-default-action)))))
-
-(defun consult-gh-embark-unload-function ()
-  "Unload function for `consult-gh-embark'."
-  (consult-gh-embark--mode-off))
