@@ -32,3 +32,7 @@ if response.status_code == 204:
     print('Pull request merged successfully!')
 else:
     print('Error merging pull request:', response.json()['message'])
+
+
+
+(print "All Done!")

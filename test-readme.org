@@ -1,0 +1,50 @@
+
+* Welcome to GitHub Manager for Emacs!
+=======================================
+
+GitHub Manager is an Emacs package that allows you to manage your GitHub repositories using the GitHub API. With GitHub Manager, you can easily view, clone, and create new repositories without leaving Emacs.
+
+** Installation
+------------
+To install GitHub Manager, add the following to your Emacs init file:
+
+#+begin_src
+(package-install 'github-manager)
+#+end_src
+
+** Configuration
+-------------
+
+Before using GitHub Manager, you will need to set up your GitHub API credentials. You can do this by adding the following to your Emacs init file:
+
+#+begin_src
+(setq github-api-token "your-github-api-token")
+#+end_src
+
+You can obtain a GitHub API token by following the instructions on the [GitHub Developer website](https://developer.github.com/apps/building-oauth-apps/).
+
+** Usage
+-----
+
+To view your GitHub repositories, use the =github-manager= command. This will display a buffer with a list of your repositories. You can use the =c= key to clone a repository, or the =n= key to create a new repository.
+
+To clone a repository, use the =c= key and enter the path where you want to clone the repository. GitHub Manager will then clone the repository and open it in a new buffer.
+
+To create a new repository, use the =n= key and enter the name and description for the new repository. GitHub Manager will then create the repository and open it in a new buffer.
+
+** Contributing
+------------
+
+If you would like to contribute to GitHub Manager, please submit a pull request. I welcome any and all contributions, including bug fixes, new features, and documentation improvements.
+
+** License
+-------
+
+GitHub Manager is released under the MIT License. See the =LICENSE= file for more information.
+
+Acknowledgments
+--------------
+
+GitHub Manager was inspired by the [GitHub Explorer](https://github.com/syohex/github-explorer) package for Emacs. I would like to thank the author of that package for their excellent work.
+
+I would also like to thank the GitHub API team for providing a powerful and easy-to-use API for managing GitHub repositories.
