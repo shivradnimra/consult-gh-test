@@ -48,4 +48,4 @@ body:
       required: false
 - type: markdown
   attributes:
-    value: "## Thanks for taking the time to fill this feature request!"
+    value: "Thanks for taking the time to fill this feature request!"
