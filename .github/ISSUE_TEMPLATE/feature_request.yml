@@ -1,24 +1,49 @@
----
 name: Feature request
 description: Suggest an idea for this project
-title: 'This is a FEATURE REQUEST for '
-labels:
- - enhancement
-assignees: 
- - shivradnimra
-milestone:
- - new
-projects: ["@shivrdnimra's Product Launch 1",]
-body: 
-"**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+title: "This is a FEATURE REQUEST for <feature>'"
+labels: ["enhancement"]
+milestone: "new
+assignees: ["shivradnimra"]
+projects: ["@shivradnimra's Product Launch 1"]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please search to see if a request issue already exists for this feature.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: textarea
+  attributes:
+    label: Is your feature request related to a problem? Please describe
+    description: A concise description of what you're experiencing.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Feature Description
+    description: Describe the solution you'd like.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Alternative solutions
+    description: Describe alternatives you've considered.  
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Alternative solutions
+    description: Describe alternatives you've considered.  
+  validations:
+    required: false
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+- type: textarea
+  attributes:
+    label: Additional context?
+    description: |
+      Links? References? Anything that will give us more context about the feature you are requesting!
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here."
----
+      Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+  validations:
+    required: false
