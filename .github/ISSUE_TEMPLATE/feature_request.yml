@@ -2,7 +2,7 @@ name: Feature request
 description: Suggest an idea for this project
 title: "This is a FEATURE REQUEST for <feature>'"
 labels: ["enhancement"]
-milestone: "new
+milestone: "new"
 assignees: ["shivradnimra"]
 projects: ["@shivradnimra's Product Launch 1"]
 body:
