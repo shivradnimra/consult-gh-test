@@ -8,7 +8,7 @@ assignees:
  - shivradnimra
 milestone: new
 project:
- - @shivrdnimra's Product Launch 1
+ - shivrdnimra's Product Launch 1
 ---
 
 **Is your feature request related to a problem? Please describe.**
