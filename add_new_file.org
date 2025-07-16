@@ -5,5 +5,8 @@ This is a new file
 (print "a new line here")
 #+end_src
 
-#+RESULTS:
-: new file!
+
+Let's add some text here:
+
+Phasellus purus.
+
