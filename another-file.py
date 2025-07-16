@@ -1,13 +1,6 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.linspace(0, 2 * np.pi, 100)
-y = np.sin(x)
-plt.plot(x, y)
-
-x = np.linspace(0, 2 * np.pi, 1000)
-y = np.sin(x) + np.cos(10 * x) + np.random.random(len(x))
-plt.plot(x, y)
-plt.xlabel("New Time")
-plt.ylabel("Signal")
-plt.show()
+aW1wb3J0IG51bXB5IGFzIG5wCmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHQKCnggPSBu
+cC5saW5zcGFjZSgwLCAyICogbnAucGksIDEwMCkKeSA9IG5wLnNpbih4KQpwbHQucGxvdCh4LCB5
+KQoKeCA9IG5wLmxpbnNwYWNlKDAsIDIgKiBucC5waSwgMTAwMCkKeSA9IG5wLnNpbih4KSArIG5w
+LmNvcygxMCAqIHgpICsgbnAucmFuZG9tLnJhbmRvbShsZW4oeCkpCnBsdC5wbG90KHgsIHkpCnBs
+dC54bGFiZWwoIk5ldyBUaW1lIikKcGx0LnlsYWJlbCgiU2lnbmFsIikKcGx0LnNob3coKQoKCnBy
+aW50KCJUaGlzIGlzIGEgdGVzdCBmcm9tIEVtYWNzIG5ldyB0ZXN0IikK
