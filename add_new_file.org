@@ -5,10 +5,7 @@ This is a new file
 (print "a new line here")
 #+end_src
 
-#+RESULTS:
-: new file!
 
 
 
-new file
 
