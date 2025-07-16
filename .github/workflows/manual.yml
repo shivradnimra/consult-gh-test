@@ -9,7 +9,7 @@ on:
     # Inputs the workflow accepts.
     inputs:
       FirstName:
-        # Friendly description to be shown in the UI instead of 'name'
+        # Friendly description to be shown in the UI instead of 'FirstName'
         description: "First Name to greet"
         # Default value if no value is explicitly provided
         required: true
@@ -17,8 +17,16 @@ on:
         type: string
 
       LastName:
-        # Friendly description to be shown in the UI instead of 'name'
+        # Friendly description to be shown in the UI instead of 'LastName'
         description: "Last Name to greet"
+        # Default value if no value is explicitly provided
+        required: true
+        # The data type of the input
+        type: string
+
+     TestInput:
+        # Friendly description to be shown in the UI instead of 'LastName'
+        description: "Test Input"
         # Default value if no value is explicitly provided
         required: true
         # The data type of the input
