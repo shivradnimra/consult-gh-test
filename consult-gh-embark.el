@@ -237,6 +237,3 @@ The candidate can be a repo, issue, PR, file path, or a branch."
 (defun consult-gh-embark-unload-function ()
   "Unload function for `consult-gh-embark'."
   (consult-gh-embark--mode-off))
-
-
-(provide 'consult-gh-embark)

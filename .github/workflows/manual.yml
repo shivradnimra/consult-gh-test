@@ -8,9 +8,25 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+      FirstName:
+        # Friendly description to be shown in the UI instead of 'FirstName'
+        description: "First Name to greet"
+        # Default value if no value is explicitly provided
+        required: true
+        # The data type of the input
+        type: string
+
+      LastName:
+        # Friendly description to be shown in the UI instead of 'LastName'
+        description: "Last Name to greet"
+        # Default value if no value is explicitly provided
+        required: true
+        # The data type of the input
+        type: string
+
+     TestInput2:
+        # Friendly description to be shown in the UI instead of 'LastName'
+        description: "Another Test Input"
         # Default value if no value is explicitly provided
         required: true
         # The data type of the input
@@ -25,6 +41,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+      # Runs a single command using the runners shell
+      - name: Send greeting
+        run: echo "Hello ${{ inputs.FirstName }} ${{ inputs.LastName }}"
