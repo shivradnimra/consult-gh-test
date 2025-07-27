@@ -2,3 +2,6 @@
 	path = demo
 	url = git@github.com:shivradnimra/demo
 	branch = develop
+[submodule "evil-insert-emacs"]
+	path = evil-insert-emacs
+	url = https://gitlab.com/shnarazk/emacs/evil-insert-emacs.git
