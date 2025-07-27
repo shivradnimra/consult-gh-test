@@ -1,0 +1,10 @@
+This is a new file
+
+#+begin_src emacs-lisp
+(print "new file!")
+(print "a new line here")
+#+end_src
+
+
+
+The text here is added directly from Emacs!
