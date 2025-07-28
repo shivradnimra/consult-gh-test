@@ -8,3 +8,10 @@
 [submodule "gitlab-module"]
 	path = gitlab-module
 	url = git@gitlab.com:armindarvish/consult-gh-test.git
+[submodule "demo2"]
+	path = demo2
+	url = git@github.com:shivradnimra/demo.git
+[submodule "demo3"]
+	path = demo3
+	url = git@github.com:shivradnimra/demo.git
+	branch = new2
