@@ -15,3 +15,7 @@
 	path = demo3
 	url = git@github.com:shivradnimra/demo.git
 	branch = new2
+[submodule "demo4"]
+	path = demo4
+	url = git@github.com:shivradnimra/demo.git
+	branch = new2
